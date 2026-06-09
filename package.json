@@ -1,0 +1,20 @@
+{
+  "name": "tidetime-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marketing site + documentation for Tidetime. Docs are synced from the main repo's /docs folder.",
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync-docs.mjs",
+    "dev": "npm run sync && astro dev",
+    "start": "astro dev",
+    "build": "npm run sync && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.34.0",
+    "astro": "^5.6.0",
+    "sharp": "^0.34.0"
+  }
+}

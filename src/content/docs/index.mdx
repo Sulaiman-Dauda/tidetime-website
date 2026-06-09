@@ -1,0 +1,170 @@
+---
+title: "Tidetime — open-source scheduling you host yourself"
+description: "Tidetime is the open-source, self-hosted scheduling platform: booking pages, team coordination, calendar sync, payments, meeting polls, routing forms, and a developer API. Install it with one command."
+template: splash
+editUrl: false
+lastUpdated: false
+hero:
+  tagline: "Booking pages, team scheduling, calendars, and payments — open-source, self-hosted, and yours. One command to install."
+  actions:
+    - text: Get started
+      link: /guides/getting-started/
+      icon: right-arrow
+      variant: primary
+    - text: Star on GitHub
+      link: https://github.com/Sulaiman-Dauda/tidetime
+      icon: external
+      variant: minimal
+---
+
+import { Code } from "@astrojs/starlight/components";
+
+<div class="tt-tideglow" />
+
+{/* ── Install in one command ─────────────────────────────────────────────── */}
+<div class="tt-section">
+
+## Up and running in one command
+
+No `.env` to edit, no glue to write. The installer checks for Docker, generates
+secure secrets, launches the app and database, runs migrations, and waits until
+everything is healthy.
+
+<div class="tt-install">
+  <div class="tt-install-head">
+    <span class="tt-dot" style="background:#ff5f56"></span>
+    <span class="tt-dot" style="background:#ffbd2e"></span>
+    <span class="tt-dot" style="background:#27c93f"></span>
+    <span style="margin-left:.4rem">your-server&nbsp;~</span>
+  </div>
+  <Code
+    code={`curl -fsSL https://raw.githubusercontent.com/Sulaiman-Dauda/tidetime/main/install.sh -o install.sh
+chmod +x install.sh
+./install.sh`}
+    lang="bash"
+    frame="none"
+  />
+</div>
+
+</div>
+
+{/* ── Everything you need ────────────────────────────────────────────────── */}
+<div class="tt-section">
+
+## Everything a scheduling platform should have
+
+<p class="tt-lead">From a single consultant link to a full team operation — Tidetime scales with you.</p>
+
+<div class="tt-grid">
+  <div class="tt-card">
+    <span class="tt-ico">📅</span>
+    <h3>Booking pages</h3>
+    <p>Shareable personal and team pages with your branding, custom questions, durations, buffers, and notice rules.</p>
+  </div>
+  <div class="tt-card">
+    <span class="tt-ico">👥</span>
+    <h3>Team scheduling</h3>
+    <p>Round-robin, collective, and multi-attendant assignment with role-based access for your whole team.</p>
+  </div>
+  <div class="tt-card">
+    <span class="tt-ico">🔄</span>
+    <h3>Calendar sync</h3>
+    <p>Two-way sync with Google Calendar, Microsoft 365 / Outlook, and Apple / CalDAV. No double-bookings.</p>
+  </div>
+  <div class="tt-card">
+    <span class="tt-ico">🎥</span>
+    <h3>Automatic meeting links</h3>
+    <p>Google Meet, Microsoft Teams, Zoom, Daily, or built-in Jitsi — minted per booking, no manual steps.</p>
+  </div>
+  <div class="tt-card">
+    <span class="tt-ico">💳</span>
+    <h3>Payments &amp; deposits</h3>
+    <p>Collect full payment or a deposit at booking time with Stripe. Confirmations and refunds handled for you.</p>
+  </div>
+  <div class="tt-card">
+    <span class="tt-ico">🗳️</span>
+    <h3>Meeting polls</h3>
+    <p>Propose several times, let invitees vote, and book the winning slot — with flexible result visibility.</p>
+  </div>
+  <div class="tt-card">
+    <span class="tt-ico">🧭</span>
+    <h3>Routing forms</h3>
+    <p>Ask a few questions, then send each person to the right service, an external link, or a message.</p>
+  </div>
+  <div class="tt-card">
+    <span class="tt-ico">⭐</span>
+    <h3>Reviews</h3>
+    <p>Collect private feedback and route happy customers to your public review page above a star threshold.</p>
+  </div>
+  <div class="tt-card">
+    <span class="tt-ico">🔔</span>
+    <h3>Reminders &amp; emails</h3>
+    <p>Branded confirmations, reschedules, cancellations, and timed reminders over your own SMTP.</p>
+  </div>
+</div>
+
+</div>
+
+{/* ── Integrations ───────────────────────────────────────────────────────── */}
+<div class="tt-section">
+
+## Works with the tools you already use
+
+<p class="tt-lead">Credentials are stored encrypted in your database and configured in-app — or supplied as environment variables. Your keys never leave your server.</p>
+
+<div class="tt-pills">
+  <span class="tt-pill">Google Calendar</span>
+  <span class="tt-pill">Microsoft 365 / Outlook</span>
+  <span class="tt-pill">Apple / CalDAV</span>
+  <span class="tt-pill">Google Meet</span>
+  <span class="tt-pill">Microsoft Teams</span>
+  <span class="tt-pill">Zoom</span>
+  <span class="tt-pill">Daily</span>
+  <span class="tt-pill">Jitsi</span>
+  <span class="tt-pill">HubSpot</span>
+  <span class="tt-pill">Stripe</span>
+  <span class="tt-pill">SMTP email</span>
+</div>
+
+</div>
+
+{/* ── Self-hosting ───────────────────────────────────────────────────────── */}
+<div class="tt-section">
+
+## Self-hosted, open-source, and yours
+
+<div class="tt-grid">
+  <div class="tt-card">
+    <span class="tt-ico">🔒</span>
+    <h3>Your data stays yours</h3>
+    <p>Everything runs on your own server and your own PostgreSQL. No third-party data processor in the middle.</p>
+  </div>
+  <div class="tt-card">
+    <span class="tt-ico">⚙️</span>
+    <h3>One command, or full control</h3>
+    <p>Use the installer, the Docker Compose stack, or a manual Node deploy — whatever fits your infrastructure.</p>
+  </div>
+  <div class="tt-card">
+    <span class="tt-ico">🧩</span>
+    <h3>Developer API &amp; webhooks</h3>
+    <p>A documented REST API, signed outgoing webhooks, and an embeddable booking widget for your own product.</p>
+  </div>
+  <div class="tt-card">
+    <span class="tt-ico">📖</span>
+    <h3>MIT licensed</h3>
+    <p>Free and open under the MIT license. Read the code, fork it, extend it, and contribute back.</p>
+  </div>
+</div>
+
+</div>
+
+{/* ── Final CTA ──────────────────────────────────────────────────────────── */}
+<div class="tt-cta-band">
+
+## Ready when you are
+
+Spin up your own scheduling platform in minutes, then make it yours.
+
+[Read the docs →](/guides/getting-started/) &nbsp;·&nbsp; [Browse the API →](/guides/api/) &nbsp;·&nbsp; [Support the project →](/support/)
+
+</div>

@@ -1,0 +1,199 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   Tidetime — ocean/tide theme for Starlight.
+   Accent is a calm teal→cyan, echoing the "tide" brand and the installer's
+   wave animation.
+   ─────────────────────────────────────────────────────────────────────────── */
+:root {
+  --sl-color-accent-low: #042f33;
+  --sl-color-accent: #0ea5b7;
+  --sl-color-accent-high: #a6e8ef;
+
+  --tt-teal: #0ea5b7;
+  --tt-cyan: #22d3ee;
+  --tt-deep: #0b3a45;
+  --tt-ink: #0f172a;
+
+  --sl-content-width: 50rem;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #cdeef2;
+  --sl-color-accent: #0b8c9d;
+  --sl-color-accent-high: #073b43;
+}
+
+/* Brand gradient used across hero + section accents. */
+.tt-gradient-text {
+  background: linear-gradient(100deg, var(--tt-teal), var(--tt-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── Splash hero polish ───────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.hero .tagline {
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  max-width: 42rem;
+}
+
+/* Soft tide glow behind the page top. */
+.tt-tideglow::before {
+  content: "";
+  position: absolute;
+  inset: -10% -20% auto -20%;
+  height: 480px;
+  background: radial-gradient(60% 60% at 50% 0%, rgba(34, 211, 238, 0.18), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── Section scaffolding for the landing page ─────────────────────────────── */
+.tt-section {
+  margin: 4.5rem auto 0;
+}
+.tt-section > h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.4rem;
+}
+.tt-section > p.tt-lead {
+  color: var(--sl-color-gray-3);
+  max-width: 44rem;
+  margin-top: 0;
+}
+
+/* Feature / integration grid. */
+.tt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+.tt-card {
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.85rem;
+  padding: 1.15rem 1.25rem;
+  background: var(--sl-color-black);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.tt-card:hover {
+  border-color: var(--tt-teal);
+  transform: translateY(-2px);
+}
+.tt-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+.tt-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--sl-color-gray-3);
+  line-height: 1.5;
+}
+.tt-card .tt-ico {
+  font-size: 1.4rem;
+  line-height: 1;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+/* Install callout with the one-command curl. */
+.tt-install {
+  margin-top: 1.6rem;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 1rem;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(14, 165, 183, 0.08), transparent 60%),
+    var(--sl-color-black);
+}
+.tt-install-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--sl-color-gray-5);
+  font-size: 0.85rem;
+  color: var(--sl-color-gray-3);
+}
+.tt-dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+.tt-install pre {
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Integration pills. */
+.tt-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.4rem;
+}
+.tt-pill {
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.88rem;
+  color: var(--sl-color-white);
+  background: var(--sl-color-gray-6);
+}
+
+/* Stats row. */
+.tt-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+.tt-stat {
+  text-align: center;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.85rem;
+  padding: 1.1rem 0.75rem;
+}
+.tt-stat b {
+  display: block;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  color: var(--tt-cyan);
+}
+.tt-stat span {
+  font-size: 0.85rem;
+  color: var(--sl-color-gray-3);
+}
+
+/* Final CTA band. */
+.tt-cta-band {
+  margin: 4.5rem auto 1rem;
+  text-align: center;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 1.25rem;
+  padding: 2.5rem 1.5rem;
+  background:
+    radial-gradient(70% 120% at 50% 0%, rgba(34, 211, 238, 0.12), transparent 70%),
+    var(--sl-color-black);
+}
+.tt-cta-band h2 {
+  margin-top: 0;
+}
+
+/* Support page tiers. */
+.tt-support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.6rem;
+}

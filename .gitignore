@@ -1,0 +1,16 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# synced docs (generated at build time from the main repo's /docs)
+src/content/docs/guides/
+
+# misc
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
