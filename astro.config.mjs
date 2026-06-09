@@ -8,10 +8,37 @@ import starlight from "@astrojs/starlight";
 const site = process.env.SITE_URL || "https://tidetime.app";
 const base = process.env.BASE_PATH || "/";
 
+// Root-absolute links inside markdown/MDX content (e.g. [API](/guides/api/))
+// are NOT base-prefixed by Astro — only Starlight's own nav/hero are. Under a
+// GitHub project-page base like /tidetime-website/, those links would resolve to
+// the domain root and 404. This rehype plugin prefixes the base path to every
+// internal root-absolute <a href>, in content, for both markdown and MDX.
+const basePrefix = base.replace(/\/$/, ""); // "" for "/", "/tidetime-website" otherwise
+function rehypeBaseLinks() {
+  return (tree) => {
+    const walk = (node) => {
+      if (
+        node.type === "element" &&
+        node.tagName === "a" &&
+        typeof node.properties?.href === "string"
+      ) {
+        const href = node.properties.href;
+        // Internal, root-absolute, not already based, not protocol-relative.
+        if (href.startsWith("/") && !href.startsWith("//") && basePrefix && !href.startsWith(basePrefix + "/")) {
+          node.properties.href = basePrefix + href;
+        }
+      }
+      if (Array.isArray(node.children)) node.children.forEach(walk);
+    };
+    walk(tree);
+  };
+}
+
 export default defineConfig({
   site,
   base,
   trailingSlash: "always",
+  markdown: { rehypePlugins: [rehypeBaseLinks] },
   integrations: [
     starlight({
       title: "Tidetime",
