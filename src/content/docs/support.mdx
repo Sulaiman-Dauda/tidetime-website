@@ -1,90 +1,249 @@
 ---
 title: Support Tidetime
-description: "Tidetime is free and open-source, built and maintained in the open. Here's how you can help keep it alive — through sponsorship, contributions, or simply spreading the word."
+description: "Tidetime is free and open-source. Here is how you can help keep it alive — through sponsorship, contributions, or simply spreading the word."
 template: doc
 tableOfContents: false
 editUrl: false
 ---
 
-import { LinkCard, CardGrid } from "@astrojs/starlight/components";
+<div class="tt-support-hero">
+  <span class="tt-eyebrow">
+    <span class="tt-eyebrow-dot"></span>
+    Open-source &amp; self-funded
+  </span>
+  <h1 class="tt-section-heading">Support the project.</h1>
+  <p class="tt-support-intro">
+    Tidetime is free, open-source, and self-funded — no paid tier gating features,
+    no venture money, and no data resold on the side. If Tidetime saves you time or money,
+    here is how you can help keep it healthy and moving forward.
+  </p>
+</div>
 
-Tidetime is **free, open-source, and self-funded**. There's no paid tier gating
-features, no venture money, and no data resold on the side — just software that
-respects the people who run it. If Tidetime saves you time or money, here are the
-ways you can help keep it healthy and moving forward.
+<div class="tt-support-section">
+  <div class="tt-support-section-head">
+    <span class="tt-eyebrow">
+      <span class="tt-eyebrow-dot"></span>
+      Sponsorship
+    </span>
+    <h2 class="tt-section-heading" style="font-size:clamp(1.4rem,3vw,2rem);">Fund the work.</h2>
+    <p class="tt-section-lead">
+      Sponsorship covers the unglamorous parts — security updates, dependency upgrades,
+      documentation, and time to review contributions. Even a small recurring amount makes a real difference.
+    </p>
+  </div>
 
-## Fund the work
+  <div class="tt-support-grid">
 
-Sponsorship pays for the unglamorous parts — security updates, dependency
-upgrades, documentation, and the time to review contributions. Even a small
-recurring amount makes a real difference.
+    <div class="tt-support-card">
+      <div class="tt-support-card-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </div>
+      <h3>GitHub Sponsors</h3>
+      <p>
+        Back Tidetime monthly or one-time, right from GitHub.
+        The most direct way to support ongoing development.
+      </p>
+      <a href="https://github.com/sponsors/Sulaiman-Dauda" class="tt-support-card-link" target="_blank" rel="noopener noreferrer">
+        Sponsor on GitHub
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </div>
 
-<CardGrid>
-  <LinkCard
-    title="❤️ GitHub Sponsors"
-    description="Back Tidetime monthly or one-time, right from GitHub. The most direct way to support ongoing development."
-    href="https://github.com/sponsors/Sulaiman-Dauda"
-  />
-  <LinkCard
-    title="☕ Buy a coffee"
-    description="Prefer a one-off tip? A coffee keeps the late-night commits flowing. (Set up your Ko-fi / Buy Me a Coffee link here.)"
-    href="https://github.com/sponsors/Sulaiman-Dauda"
-  />
-  <LinkCard
-    title="🤝 Open Collective"
-    description="For teams and companies that need an invoice and transparent, public spending. (Add your Open Collective when ready.)"
-    href="https://github.com/sponsors/Sulaiman-Dauda"
-  />
-</CardGrid>
+    <div class="tt-support-card">
+      <div class="tt-support-card-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <h3>One-off tip</h3>
+      <p>
+        Prefer a one-time contribution? A coffee or two keeps the late-night commits flowing.
+        Set up your Ko-fi or Buy Me a Coffee link and update this page.
+      </p>
+      <a href="https://github.com/sponsors/Sulaiman-Dauda" class="tt-support-card-link" target="_blank" rel="noopener noreferrer">
+        Send a tip
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </div>
 
-:::note[For maintainers]
-The donation links above currently all point to GitHub Sponsors. When you set up
-Ko-fi, Buy Me a Coffee, or Open Collective, update the `href` values in
-`src/content/docs/support.mdx`. You can also add a `.github/FUNDING.yml` to the
-main repository so a **Sponsor** button appears on GitHub itself.
-:::
+    <div class="tt-support-card">
+      <div class="tt-support-card-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+        </svg>
+      </div>
+      <h3>Open Collective</h3>
+      <p>
+        For teams and companies that need an invoice and transparent, public spending records.
+        Add your Open Collective link here when ready.
+      </p>
+      <a href="https://github.com/sponsors/Sulaiman-Dauda" class="tt-support-card-link" target="_blank" rel="noopener noreferrer">
+        Contribute via Open Collective
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </div>
 
-## Help without spending a penny
+  </div>
+</div>
 
-Money is only one kind of support. These cost nothing and matter just as much.
+<div class="tt-support-section">
+  <div class="tt-support-section-head">
+    <span class="tt-eyebrow">
+      <span class="tt-eyebrow-dot"></span>
+      No spend required
+    </span>
+    <h2 class="tt-section-heading" style="font-size:clamp(1.4rem,3vw,2rem);">Help without spending a penny.</h2>
+    <p class="tt-section-lead">Money is one kind of support. These cost nothing and matter just as much.</p>
+  </div>
 
-<CardGrid>
-  <LinkCard
-    title="⭐ Star the repository"
-    description="Stars are how new people discover Tidetime. It's the single fastest way to help the project grow."
-    href="https://github.com/Sulaiman-Dauda/tidetime"
-  />
-  <LinkCard
-    title="🐛 Report bugs & ideas"
-    description="A clear bug report or a well-described feature request is worth its weight in gold."
-    href="https://github.com/Sulaiman-Dauda/tidetime/issues"
-  />
-  <LinkCard
-    title="🛠️ Contribute"
-    description="Code, docs, translations, or design — see the contributing guide to get started."
-    href="https://github.com/Sulaiman-Dauda/tidetime/blob/main/CONTRIBUTING.md"
-  />
-  <LinkCard
-    title="📣 Spread the word"
-    description="Write about your setup, share it with a team that needs it, or recommend it in a thread. Word of mouth is everything for open source."
-    href="https://github.com/Sulaiman-Dauda/tidetime"
-  />
-</CardGrid>
+  <div class="tt-support-grid">
 
-## Where your support goes
+    <div class="tt-support-card">
+      <div class="tt-support-card-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+      </div>
+      <h3>Star the repository</h3>
+      <p>
+        Stars are how new people discover Tidetime on GitHub. It is the fastest single
+        action that helps the project grow.
+      </p>
+      <a href="https://github.com/Sulaiman-Dauda/tidetime" class="tt-support-card-link" target="_blank" rel="noopener noreferrer">
+        Star on GitHub
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </div>
 
-Every contribution goes straight back into the project:
+    <div class="tt-support-card">
+      <div class="tt-support-card-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+      </div>
+      <h3>Report bugs &amp; ideas</h3>
+      <p>
+        A clear bug report or a well-described feature request is worth its weight in gold.
+        Open an issue on GitHub — the more detail, the better.
+      </p>
+      <a href="https://github.com/Sulaiman-Dauda/tidetime/issues" class="tt-support-card-link" target="_blank" rel="noopener noreferrer">
+        Open an issue
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </div>
 
-- **Security** — timely patches, dependency upgrades, and audits.
-- **Reliability** — fixing bugs, improving tests, and keeping deployments smooth.
-- **Documentation** — the guides on this site, kept accurate and current.
-- **New features** — building the most-requested capabilities, in the open.
+    <div class="tt-support-card">
+      <div class="tt-support-card-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+        </svg>
+      </div>
+      <h3>Contribute</h3>
+      <p>
+        Code, docs, translations, or design — see the contributing guide to get started.
+        First-time contributors are very welcome.
+      </p>
+      <a href="https://github.com/Sulaiman-Dauda/tidetime/blob/main/CONTRIBUTING.md" class="tt-support-card-link" target="_blank" rel="noopener noreferrer">
+        Read the contributing guide
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </div>
 
-Thank you for being part of it. Tidetime exists because people like you choose to
-support open software. 🌊
+    <div class="tt-support-card">
+      <div class="tt-support-card-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+        </svg>
+      </div>
+      <h3>Spread the word</h3>
+      <p>
+        Write about your setup, share it with a team that needs it, or mention it in a thread.
+        Word of mouth is everything for open source.
+      </p>
+      <a href="https://github.com/Sulaiman-Dauda/tidetime" class="tt-support-card-link" target="_blank" rel="noopener noreferrer">
+        Share Tidetime
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </div>
 
----
+  </div>
+</div>
 
-Not sure where to begin? **[Read the documentation](/guides/getting-started/)**,
-try a [one-command install](/#up-and-running-in-one-command), or open a
-[discussion on GitHub](https://github.com/Sulaiman-Dauda/tidetime/discussions).
+<div class="tt-support-section">
+  <div class="tt-support-section-head">
+    <span class="tt-eyebrow">
+      <span class="tt-eyebrow-dot"></span>
+      Transparency
+    </span>
+    <h2 class="tt-section-heading" style="font-size:clamp(1.4rem,3vw,2rem);">Where your support goes.</h2>
+  </div>
+
+  <ul class="tt-support-where-list">
+    <li class="tt-support-where-item">
+      <span class="tt-support-where-label">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        Security
+      </span>
+      <span class="tt-support-where-desc">Timely patches, dependency upgrades, and security audits.</span>
+    </li>
+    <li class="tt-support-where-item">
+      <span class="tt-support-where-label">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+        </svg>
+        Reliability
+      </span>
+      <span class="tt-support-where-desc">Bug fixes, improved tests, and smoother deployments.</span>
+    </li>
+    <li class="tt-support-where-item">
+      <span class="tt-support-where-label">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        </svg>
+        Documentation
+      </span>
+      <span class="tt-support-where-desc">Guides, references, and tutorials kept accurate and current.</span>
+    </li>
+    <li class="tt-support-where-item">
+      <span class="tt-support-where-label">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        New features
+      </span>
+      <span class="tt-support-where-desc">Building the most-requested capabilities, in the open.</span>
+    </li>
+  </ul>
+</div>
