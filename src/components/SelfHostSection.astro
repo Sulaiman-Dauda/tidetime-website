@@ -1,10 +1,10 @@
 ---
 ---
 
-<section class="tt-section tt-page">
+<section class="tt-section tt-page" id="self-host">
   <div class="tt-inner">
 
-    <div class="tt-section-head">
+    <div class="tt-section-head tt-reveal">
       <span class="tt-eyebrow">
         <span class="tt-eyebrow-dot"></span>
         Self-hosted &amp; open-source
@@ -16,7 +16,7 @@
       </p>
     </div>
 
-    <div class="tt-ownit-grid">
+    <div class="tt-ownit-grid tt-reveal" style="--tt-delay: 0.08s">
 
       <div class="tt-ownit-card">
         <div class="tt-ownit-num">01</div>
@@ -56,24 +56,51 @@
 
     </div>
 
-    <div class="tt-stats-strip">
+    <div class="tt-stats-strip tt-reveal" style="--tt-delay: 0.14s">
       <div class="tt-stat-item">
-        <div class="tt-stat-num">9</div>
+        <div class="tt-stat-num" data-count="9">9</div>
         <div class="tt-stat-label">feature areas</div>
       </div>
       <div class="tt-stat-item">
-        <div class="tt-stat-num">3</div>
+        <div class="tt-stat-num" data-count="3">3</div>
         <div class="tt-stat-label">calendar providers</div>
       </div>
       <div class="tt-stat-item">
-        <div class="tt-stat-num">5</div>
+        <div class="tt-stat-num" data-count="5">5</div>
         <div class="tt-stat-label">video providers</div>
       </div>
       <div class="tt-stat-item">
-        <div class="tt-stat-num">1</div>
+        <div class="tt-stat-num" data-count="1">1</div>
         <div class="tt-stat-label">command to install</div>
       </div>
     </div>
 
   </div>
 </section>
+
+<script>
+  const nums = document.querySelectorAll<HTMLElement>('.tt-stat-num[data-count]');
+  if (nums.length && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          observer.unobserve(entry.target);
+          const el = entry.target as HTMLElement;
+          const target = Number(el.dataset.count) || 0;
+          const duration = 900;
+          const start = performance.now();
+          const tick = (now: number) => {
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = String(Math.round(eased * target));
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }
+      },
+      { threshold: 0.6 }
+    );
+    nums.forEach((n) => observer.observe(n));
+  }
+</script>

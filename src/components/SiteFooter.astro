@@ -1,0 +1,84 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const year = new Date().getFullYear();
+---
+
+<footer class="tt-footer tt-page">
+  <div class="tt-inner">
+
+    <div class="tt-footer-grid">
+
+      <div class="tt-footer-brand">
+        <a href={`${base}/`} class="tt-footer-logo">Tidetime</a>
+        <p>
+          The open-source, self-hosted scheduling platform.
+          Booking pages, team coordination, calendars, payments, and a developer API —
+          on your server, under your rules.
+        </p>
+        <a href="https://github.com/Sulaiman-Dauda/tidetime" class="tt-footer-gh" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+          Sulaiman-Dauda/tidetime
+        </a>
+      </div>
+
+      <nav class="tt-footer-col" aria-label="Product">
+        <div class="tt-footer-head">Product</div>
+        <a href="#features">Features</a>
+        <a href="#integrations">Integrations</a>
+        <a href="#self-host">Self-hosting</a>
+        <a href={`${base}/support/`}>Support the project</a>
+      </nav>
+
+      <nav class="tt-footer-col" aria-label="Documentation">
+        <div class="tt-footer-head">Documentation</div>
+        <a href={`${base}/guides/getting-started/`}>Getting started</a>
+        <a href={`${base}/guides/user-guide/`}>User guide</a>
+        <a href={`${base}/guides/deployment/`}>Deployment</a>
+        <a href={`${base}/guides/api/`}>API reference</a>
+        <a href={`${base}/guides/troubleshooting/`}>Troubleshooting</a>
+      </nav>
+
+      <nav class="tt-footer-col" aria-label="Project">
+        <div class="tt-footer-head">Project</div>
+        <a href="https://github.com/Sulaiman-Dauda/tidetime" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/Sulaiman-Dauda/tidetime/issues" target="_blank" rel="noopener noreferrer">Issues</a>
+        <a href="https://github.com/Sulaiman-Dauda/tidetime/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing</a>
+        <a href="https://github.com/Sulaiman-Dauda/tidetime/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT license</a>
+      </nav>
+
+    </div>
+
+    <div class="tt-footer-bottom">
+      <span>&copy; {year} Tidetime &middot; MIT licensed</span>
+      <span>Scheduling infrastructure you actually own.</span>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.tt-reveal');
+  if (els.length) {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      els.forEach((el) => el.classList.add('is-visible'));
+    } else {
+      // The hidden initial state only applies under .tt-js, so content stays
+      // visible if this script never runs.
+      document.documentElement.classList.add('tt-js');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          }
+        },
+        { rootMargin: '0px 0px -8% 0px', threshold: 0.1 }
+      );
+      els.forEach((el) => observer.observe(el));
+    }
+  }
+</script>

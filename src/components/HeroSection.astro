@@ -36,6 +36,27 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </a>
     </div>
 
+    <ul class="tt-hero-meta">
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        One-command install
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Your own database, your own server
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        No usage limits or paid tiers
+      </li>
+    </ul>
+
     <div class="tt-terminal" role="figure" aria-label="One-command install terminal demo">
       <div class="tt-terminal-bar">
         <div class="tt-terminal-dots" aria-hidden="true">
@@ -44,6 +65,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <span class="tt-tdot tt-tdot-green"></span>
         </div>
         <span class="tt-terminal-title">bash &mdash; your-server ~</span>
+        <button class="tt-copy" type="button" data-copy="curl -fsSL https://tidetime.app/install.sh | bash" aria-label="Copy install command to clipboard">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          <span>Copy</span>
+        </button>
       </div>
       <div class="tt-terminal-body">
         <div class="tt-tline">
@@ -74,8 +102,34 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <span class="tt-check">✓</span>
           <span>Tidetime is live at <span class="tt-url">https://your-domain.com</span></span>
         </div>
+        <div class="tt-tline" aria-hidden="true">
+          <span class="tt-prompt">$</span>
+          <span class="tt-cursor"></span>
+        </div>
       </div>
     </div>
 
   </div>
 </section>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.tt-copy').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const text = btn.dataset.copy ?? '';
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        return;
+      }
+      const label = btn.querySelector('span');
+      if (!label || btn.classList.contains('is-copied')) return;
+      const prev = label.textContent;
+      btn.classList.add('is-copied');
+      label.textContent = 'Copied';
+      setTimeout(() => {
+        btn.classList.remove('is-copied');
+        label.textContent = prev;
+      }, 2000);
+    });
+  });
+</script>
